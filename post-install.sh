@@ -23,7 +23,7 @@ cat <<EOF >/root/.bashrc
 # PS1='${debian_chroot:+($debian_chroot)}\h:\w\$ '
 # umask 022
 
-# You may uncomment the following lines if you want `ls' to be colorized:
+# You may uncomment the following lines if you want 'ls' to be colorized:
 export LS_OPTIONS='--color=auto'
 eval "$(dircolors)"
 alias ls='ls $LS_OPTIONS'
