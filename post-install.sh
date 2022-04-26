@@ -4,7 +4,7 @@
 log () { LOG_LEVEL=$2; if [ ! $LOG_LEVEL ]; then LOG_LEVEL="info"; fi; echo -e "\033[38;5;131m[${LOG_LEVEL}] \033[38;5;147m$1\033[0m"; }
 
 
-log "Disable Enterprize repo"
+log "Disable Enterprise repo"
 sed -i "s/^deb/#deb/g" /etc/apt/sources.list.d/pve-enterprise.list
 
 log "Add No-subscription repo"
