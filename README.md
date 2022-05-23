@@ -28,11 +28,22 @@ chmod +x <script-name>
 ./<script-name> && rm <script-name>
 ```
 
-## post-install usage
+## post-install (lazy) usage
+- Disable Enterprise repo
+- Add No-subscription repo
+- Setup .bashrc
+  - enable `ls` color
+  - setup *fancy* color prompt (Ubuntu like)
+
 ```bash
 curl https://github.com/KimmoHernborg/pve-tools/raw/main/post-install.sh | bash
 ```
 Disconnect and reconnect to the host to verify that the changes have been implemented
 
 
-## nvme-trim usage
+## nvme-trim (lazy) usage
+- Setup a cron job to run fstrim to keep local m.2 ssd trimmed
+
+```bash
+curl https://github.com/KimmoHernborg/pve-tools/raw/main/nvme-trim.sh | bash
+```
