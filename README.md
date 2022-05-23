@@ -47,3 +47,13 @@ Disconnect and reconnect to the host to verify that the changes have been implem
 ```bash
 curl https://github.com/KimmoHernborg/pve-tools/raw/main/nvme-trim.sh | bash
 ```
+
+
+## change-lvm-wmid usage
+- Change WM ID (only for LVM local storage)
+- Can be run interactivly (will prompt for old ID and new ID)
+- or by providing ID's to the script directly: `./change-lvm-wmid.sh <oldid> <newid>`
+
+```bash
+wget https://github.com/KimmoHernborg/pve-tools/raw/main/change-lvm-wmid.sh && chmod +x change-lvm-wmid.sh
+```
