@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+# Based on script from: https://forum.proxmox.com/threads/changing-vmid-of-a-vm.63161/post-354970 by xickwy
+
 # !NOTE! 
 # This script is for moving VMs not CTs 
 # and only on local LVM storage!
@@ -70,7 +72,7 @@ for i in $(lvs -a | grep $VG_NAME | awk '{print $1}' | grep $OLD_VMID); do
 
     log "Updating storage ref in qemu config file ($OLD_VMID.conf): $OLD_DISK -> $NEW_DISK"
     #sed "s/$OLD_DISK/$NEW_DISK/g" /etc/pve/qemu-server/$OLD_VMID.conf | diff --color /etc/pve/qemu-server/$OLD_VMID.conf -
-    grep --color=always "$OLD_DISK" /etc/pve/qemu-server/$OLD_VMID.conf
+    #grep --color=always "$OLD_DISK" /etc/pve/qemu-server/$OLD_VMID.conf
     #echo sed -i "s/$OLD_DISK/$NEW_DISK/g" /etc/pve/qemu-server/$OLD_VMID.conf
     sed -i "s/$OLD_DISK/$NEW_DISK/g" /etc/pve/qemu-server/$OLD_VMID.conf
 done
