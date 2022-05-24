@@ -34,6 +34,7 @@ chmod +x <script-name>
 - Setup .bashrc
   - enable `ls` color
   - setup *fancy* color prompt (Ubuntu like)
+- Turn down swappiness
 
 ```bash
 curl https://github.com/KimmoHernborg/pve-tools/raw/main/post-install.sh | bash
