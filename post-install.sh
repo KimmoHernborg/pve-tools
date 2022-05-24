@@ -39,3 +39,14 @@ alias l='ls $LS_OPTIONS -lA'
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 EOF
+
+log "Turn down swappiness"
+cat <<EOG >>/etc/sysctl.conf
+
+# Swappiness
+# Set swappiness to only swap in case of no available memory (0)
+vm.swappiness=0
+
+EOG
+sysctl -w vm.swappiness=0
+
