@@ -44,9 +44,9 @@ log "Turn down swappiness"
 cat <<EOG >>/etc/sysctl.conf
 
 # Swappiness
-# Set swappiness to only swap in case of no available memory (0)
-vm.swappiness=0
+# Set swappiness to only swap in case of almost no available memory (1)
+vm.swappiness=1
 
 EOG
-sysctl -w vm.swappiness=0
+sysctl -w vm.swappiness=1
 
