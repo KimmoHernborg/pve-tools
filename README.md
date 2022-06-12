@@ -28,6 +28,14 @@ chmod +x <script-name>
 ./<script-name> && rm <script-name>
 ```
 
+## use-dhcp (lazy) usage
+- Change network interface from static to dhcp
+```bash
+curl https://github.com/KimmoHernborg/pve-tools/raw/main/use-dhcp.sh | bash
+```
+No need to restart, since the script restarts the interface
+
+
 ## post-install (lazy) usage
 - Disable Enterprise repo
 - Add No-subscription repo
