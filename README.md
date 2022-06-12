@@ -31,7 +31,7 @@ chmod +x <script-name>
 ## use-dhcp (lazy) usage
 - Change network interface from static to dhcp
 ```bash
-curl https://github.com/KimmoHernborg/pve-tools/raw/main/use-dhcp.sh | bash
+curl -L https://github.com/KimmoHernborg/pve-tools/raw/main/use-dhcp.sh | bash
 ```
 No need to restart, since the script restarts the interface
 
@@ -45,7 +45,7 @@ No need to restart, since the script restarts the interface
 - Turn down swappiness
 
 ```bash
-curl https://github.com/KimmoHernborg/pve-tools/raw/main/post-install.sh | bash
+curl -L https://github.com/KimmoHernborg/pve-tools/raw/main/post-install.sh | bash
 ```
 Disconnect and reconnect to the host to verify that the changes have been implemented
 
@@ -54,7 +54,7 @@ Disconnect and reconnect to the host to verify that the changes have been implem
 - Setup a cron job to run fstrim to keep local m.2 ssd trimmed
 
 ```bash
-curl https://github.com/KimmoHernborg/pve-tools/raw/main/nvme-trim.sh | bash
+curl -L https://github.com/KimmoHernborg/pve-tools/raw/main/nvme-trim.sh | bash
 ```
 
 
