@@ -64,8 +64,8 @@ esac
 
 # Move storage, config and change config file
 for i in $(lvs -a | grep $VG_NAME | awk '{print $1}' | grep $OLD_VMID); do
-    OLD_DISK="vm-$OLD_VMID-disk-$(echo $i | awk '{print substr($0,length,1)}')"
-    NEW_DISK="vm-$NEW_VMID-disk-$(echo $i | awk '{print substr($0,length,1)}')"
+    OLD_DISK="$i"
+    NEW_DISK="${i/$OLD_VMID/$NEW_VMID}" 
     log "Moving LVS storage: $VG_NAME/$OLD_DISK -> $NEW_DISK"
     #echo lvrename $VG_NAME/$OLD_DISK $NEW_DISK
     lvrename $VG_NAME/$OLD_DISK $NEW_DISK
